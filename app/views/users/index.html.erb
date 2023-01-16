@@ -14,7 +14,9 @@
     <% @users.each do |user| %>
       <tr>
         <td><p><%= user.email %></p></td>
-        <td><%= image_tag user.avatar if user.avatar.present? %></td>
+        <% if user.avatar.present? %>
+          <td><%= image_tag user.avatar.variant(resize:'1024x1024').processed, class: "image_index" %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
