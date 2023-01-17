@@ -1,4 +1,4 @@
-<h1>Add User</h1>
+<h1><%= t('views.common.title_new', name: User.model_name.human) %></h1>
 
 <%= form_with model: @user, local: true do |form| %>
   <div>
@@ -15,3 +15,5 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+<%= link_to t('views.common.back'), users_path %>

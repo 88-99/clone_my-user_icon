@@ -1,5 +1,6 @@
-<h1>Users Index</h1>
-<%= link_to 'Add user', new_user_path %>
+<h2><%= t('views.common.title_index', name: User.model_name.human) %></h2>
+
+<%= link_to t('views.common.new'), new_user_path %>
 
 <table>
   <thead>
