@@ -1,0 +1,14 @@
+<h2><%= t('views.common.title_show', name: User.model_name.human) %></h2>
+<p>
+  <strong><%= User.human_attribute_name(:email) %>:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong><%= User.human_attribute_name(:avatar) %>:</strong>
+  <% if @user.avatar.present? %>
+    <%= image_tag @user.avatar.variant(resize:'1024x1024').processed, class: "image_index" %>
+  <% end %>
+</p>
+
+<%= link_to t('views.common.back'), users_path %>

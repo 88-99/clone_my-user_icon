@@ -17,6 +17,7 @@
         <% if user.avatar.present? %>
           <td><%= image_tag user.avatar.variant(resize:'1024x1024').processed, class: "image_index" %></td>
         <% end %>
+        <td><%= link_to t('views.common.show'), user_path(user) %></td>
       </tr>
     <% end %>
   </tbody>
