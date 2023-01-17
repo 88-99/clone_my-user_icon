@@ -1,14 +1,22 @@
-<h2><%= t('views.common.title_show', name: User.model_name.human) %></h2>
-<p>
-  <strong><%= User.human_attribute_name(:email) %>:</strong>
-  <%= @user.email %>
-</p>
+<div class="centering_parent">
+  <div class="centering_item">
+    <h2><%= t('views.common.title_show', name: User.model_name.human) %></h2>
+  </div>
 
-<p>
-  <strong><%= User.human_attribute_name(:avatar) %>:</strong>
-  <% if @user.avatar.present? %>
-    <%= image_tag @user.avatar.variant(resize:'1024x1024').processed, class: "image_index" %>
-  <% end %>
-</p>
+  <div class="centering_item">
+    <strong><%= User.human_attribute_name(:email) %>:</strong>
+    <%= @user.email %>
+  </div>
 
-<%= link_to t('views.common.back'), users_path %>
+  <div class="centering_item">
+    <strong><%= User.human_attribute_name(:avatar) %></strong>
+  </div>
+
+  <div class="centering_item">
+    <% if @user.avatar.present? %>
+      <%= image_tag @user.avatar.variant(resize:'1024x1024').processed, class: "image_show" %>
+    <% end %>
+  </div>
+
+  <%= link_to t('views.common.back'), users_path %>
+</div>

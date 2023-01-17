@@ -111,3 +111,33 @@ input, select {
 .image_index {
   width: 100px;
 }
+
+.image_show {
+  width: 400px;
+}
+
+body {
+  background-color:  #CCFFFF;
+}
+
+.centering_parent {
+    padding: 20px;
+    text-align:  center;
+}
+ 
+.centering_item {
+    margin: 20px 0;
+}
+
+table th {
+  padding: 20px;
+}
+
+table td {
+  vertical-align: middle;
+  padding: 8px 20px;
+}
+
+#table {
+  margin: auto;
+}

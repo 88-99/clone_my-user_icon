@@ -1,25 +1,33 @@
-<h2><%= t('views.common.title_index', name: User.model_name.human) %></h2>
+<div class="centering_parent">
+  <div class="centering_item">
+    <h2><%= t('views.common.title_index', name: User.model_name.human) %></h2>
+  </div>
 
-<%= link_to t('views.common.new'), new_user_path %>
+  <div class="centering_item">
+    <%= link_to t('views.common.new'), new_user_path %>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th><%= User.human_attribute_name(:email) %></th>
-      <th><%= User.human_attribute_name(:avatar) %></th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
+  <table id="table" border="1">
+    <thead>
       <tr>
-        <td><p><%= user.email %></p></td>
-        <% if user.avatar.present? %>
-          <td><%= image_tag user.avatar.variant(resize:'1024x1024').processed, class: "image_index" %></td>
-        <% end %>
-        <td><%= link_to t('views.common.show'), user_path(user) %></td>
+        <th><%= User.human_attribute_name(:email) %></th>
+        <th><%= User.human_attribute_name(:avatar) %></th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><p><%= user.email %></p></td>
+          <% if user.avatar.present? %>
+            <td><%= image_tag user.avatar.variant(resize:'1024x1024').processed, class: "image_index" %></td>
+          <% else %>
+            <td>&nbsp;</td>
+          <% end %>
+          <td><%= link_to t('views.common.show'), user_path(user) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
